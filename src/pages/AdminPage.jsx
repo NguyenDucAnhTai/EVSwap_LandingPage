@@ -7,13 +7,13 @@ const AdminDashboard = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("Overview");
 
   const menuItems = [
-    { name: "Overview", icon: "📊" },
-    { name: "Customers", icon: "👥" },
-    { name: "Reports", icon: "📈" },
-    { name: "Stations", icon: "⚡" },
-    { name: "Employees", icon: "👨‍💼" },
-    { name: "Complaints", icon: "📝" },
-    { name: "Packages", icon: "📦" },
+    { name: "Overview", icon: <i className="bi bi-bar-chart-line-fill"></i> },
+    { name: "Customers", icon: <i className="bi bi-people-fill"></i> },
+    { name: "Reports", icon: <i className="bi bi-clipboard-data-fill"></i> },
+    { name: "Stations", icon: <i className="bi bi-lightning-charge-fill"></i> },
+    { name: "Employees", icon: <i className="bi bi-person-fill"></i> },
+    { name: "Complaints", icon: <i className="bi bi-pencil-square"></i> },
+    { name: "Packages", icon: <i className="bi bi-archive-fill"></i> },
   ];
 
   const statisticCards = [
@@ -102,8 +102,8 @@ const AdminDashboard = () => {
                 key={index}
                 onClick={() => setActiveMenuItem(item.name)}
                 className={`w-full flex items-center px-6 py-3 text-left transition-colors duration-200 ${activeMenuItem === item.name
-                    ? "bg-primary text-white border-r-4 border-blue-600"
-                    : "text-gray-700 hover:bg-gray-100"
+                  ? "bg-primary text-white border-r-4 border-blue-600"
+                  : "text-gray-700 hover:bg-gray-100"
                   }`}
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.98 }}
@@ -248,10 +248,10 @@ const AdminDashboard = () => {
                       <div className="flex items-center space-x-4">
                         <div
                           className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${station.rank === 1
-                              ? "bg-yellow-500"
-                              : station.rank === 2
-                                ? "bg-gray-400"
-                                : "bg-orange-500"
+                            ? "bg-yellow-500"
+                            : station.rank === 2
+                              ? "bg-gray-400"
+                              : "bg-orange-500"
                             }`}
                         >
                           {station.rank}
